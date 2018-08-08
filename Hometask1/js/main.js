@@ -9,14 +9,14 @@ function Container() {
 /*Add method to Container*/
 
 Container.prototype.render = function () {
-  return this.htmlCode;
+    return this.htmlCode;
 };
 
 Container.prototype.remove = function () {
-   for (var property in this){
-       console.log(property);
-       this[property] = undefined;
-   }
+    for (var property in this){
+        console.log(property);
+        this[property] = undefined;
+    }
 };
 
 /*Class menu*/
@@ -130,4 +130,40 @@ var main_meni_item = {
 var superMenu = new MenuWithInner(main_meni_item );
 var div = document.write(superMenu.render());
 
+/*HAMBURGER CONSTANTS*/
+function Product(price, kkals){
+    this.price = price;
+    this.kkals = kkals;
+}
 
+
+HAMBURGER_SIZE_SMALL = new Product(50, 20);
+HAMBURGER_SIZE_BIG = new Product(100, 40);
+HAMBURGER_STUFFING_SALAD = new Product(20, 5);
+HAMBURGER_STUFFING_CHEESE = new Product(10, 20);
+HAMBURGER_STUFFING_POTATO = new Product(15,10);
+HAMBURGER_TOPING_MAYO = new Product(20, 5);
+HAMBURGER_TOPING_SPICE = new Product(15, 0);
+
+/*Hamburger Task*/
+function Hamburger( size, stuffing ){
+    try{
+        if (size !== 'small' && size !=='large') throw new Error("HamburgerException");
+        if (stuffing !== 'cheese' && stuffing !== 'salad' && stuffing !== 'potato') throw new Error("HamburgerException");
+        Product.call(this);
+        this.size = size;
+        this.stuffing = stuffing;
+        this.toping_mayo = false ;
+        this.toping_spice = false;
+        console.log("Burger created");
+    }catch (HamburgerException) {
+        hamburgerException('Бургер не создан');
+
+    }
+}
+
+var ham1 = new Hamburger('large', 'cheese');
+
+function hamburgerException(errorMessage) {
+    console.log(errorMessage);
+}
