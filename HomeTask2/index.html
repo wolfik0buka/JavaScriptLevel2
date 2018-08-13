@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Hometask2</title>
+    <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
 </head>
 <body>
     <h1>Обработка AJAX запросов</h1>
-    <button id="get"> Get AJAX </button>
+    <h2>Получение меню</h2>
+    <button id="getMenu"> Get Menu </button>
+    <section class="menu"></section>
+
+    <h2>Получение galery</h2>
+    <button id="getGalery"> Get galery </button>
+    <section class="galery"></section>
+
+    <h2>Список пользователей</h2>
+    <button id="getUserList"> Get users </button>
+    <div class="list-user"></div>
+
+    <h2>Пользователь по номеру</h2>
+
+        <label for="id-user">Введите номер пользователя</label>
+        <input type="number" min="0" id="id-user">
+        <button id="getUserId">Узнать</button>
+        <div class="selectedUser"></div>
+
+    <h2>Добавить пользователя</h2>
+    <form action="#" method="get"></form>
+        <label for="Name-User">Введите имя пользователя: </label><br>
+        <input type="text" id="Name-User"><br>
+        <label for="Name-User">Введите E-mail пользователя: </label><br>
+        <input type="email" id="Email-User"><br>
+        <label for="Name-User">Введите возраст пользователя: </label><br>
+        <input type="number" id="age-User" min="0" max="150"><br>
+        <input type="submit" placeholder="Создать" id="addUser">
+    </form>
+    <div class="notify"></div>
+
 
 </body>
 </html>
