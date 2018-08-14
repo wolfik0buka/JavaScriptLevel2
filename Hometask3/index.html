@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Hometask3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h1>Регулярные выражения</h1>
+<section class="big-text">
+    <h2>Изменение кавычек</h2>
+    <p class="row-text">
+        Lorem ip'sum dolor sit amet, c'onsectetur adipisicing elit. Ali'quid corporis dicta distinctio doloremque
+        doloribus esse eveniet iure modi mollitia, nesciunt quidem quo q'uod quos sequi vel voluptas voluptate
+        voluptatibus voluptatum!<br>
+        'Lorem ipsum dolor sit amet.'<br>
+        'Lorem ipsum dolor sit amet, consectetur adipisic'ing elit. Id, vero.'<br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet co'rporis deserunt esse optio quas? Blanditiis ea eum iusto minima nulla ve'ritatis! Consequatur ma'gnam maxime, perspiciatis porro provident quia repellat sit.
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ea facere in maxime non quas quo sapiente. Magni, mollitia quia?'<br>
+        'Lorem ip'sum dolor sit amet, consectetur adipisici'ng elit. Adipisci, aspernatur atque corporis dignissimos distinctio doloribus ducimus, enim expedita explicabo fuga itaque magni maxime minus modi molestias neque nostrum repudiandae saepe?'<br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut consect'etur deleniti deserunt, dignissimos doloremque eos eveniet explicabo, in iu'sto mollitia, numquam perspiciatis quidem rerum voluptates voluptatibus voluptatum. Comm'odi corpori's dolores doloribus explicabo iure natus porro quia rerum. Architecto, ex!
+    </p>
+    <button id="editText">Изменить</button>
+</section>
+<section class="feedback">
+    <h2>Форма обратной связи с валидацией</h2>
+    <form action="#" method="post" name="feedback">
+        <fieldset>
+            <legend>Ваше обращение</legend>
+            <label for="name">Ваше имя:</label><br>
+            <input type="text" placeholder="Ваше имя: " id="name"><span>Имя может содержать только буквы</span><br>
+            <label for="phone">Ваш номер:</label><br>
+            <input type="text" placeholder="+7(XXX)000-0000 " id="phone"><span>Введите телефон в формате +7(ххх)000-0000</span><br>
+            <label for="email">Ваш E-mail:</label><br>
+            <input type="email" placeholder="example@example.ru " id="email" class="invalid"><br>
+            <textarea name="text" id="message" cols="50" rows="10" placeholder="Ваше обращение: "></textarea><br>
+            <input type="submit" id="send-Form">
+        </fieldset>
+    </form>
+</section>
+
+
+</div>
+<script src="common.js"></script>
+</body>
+</html>

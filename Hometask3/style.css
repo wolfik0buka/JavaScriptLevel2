@@ -1,0 +1,33 @@
+.container{
+    max-width: 1024px;
+    margin: auto;
+    text-align: center;
+}
+
+.row-text,
+.feedback{
+    text-align: left;
+}
+
+.feedback input,
+.feedback textarea{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: lightgray solid 1px;
+}
+
+.feedback  span{
+    color: red;
+    font-size: 0.75em;
+    opacity: 0;
+}
+input:hover,
+input.invalid{
+
+    border: red solid 1px;
+}
+
+.feedback .invalid +span{
+    opacity: 1;
+}
