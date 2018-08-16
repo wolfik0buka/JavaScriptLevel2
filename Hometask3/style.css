@@ -22,7 +22,6 @@
     font-size: 0.75em;
     opacity: 0;
 }
-input:hover,
 input.invalid{
 
     border: red solid 1px;
@@ -30,4 +29,9 @@ input.invalid{
 
 .feedback .invalid +span{
     opacity: 1;
+}
+
+.notify {
+    width: 250px;
+    color: green;
 }
