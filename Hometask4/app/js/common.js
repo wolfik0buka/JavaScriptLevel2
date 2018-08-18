@@ -16,14 +16,48 @@ let autocomplete = function(val, cities){
 
 };
 
-let  fillCities = function(){
+function ajaxRequest() {
+    return $.ajax({
+        url: 'http://localhost:8000/getCities',
+        type:'get',
+        dataType: 'json',
+
+    });
+}
+
+let  fillCities = function() {
+    let cities;
+    $.when(ajaxRequest()).then(function (res) {
+        cities = res;
+    });
+    console.log(cities);
     console.log('filled');
-    return ['Москва', 'Санкт-Петербург','Москва', 'Санкт-Петербург','Москва', 'Санкт-Петербург','Москва', 'Санкт-Петербург','Москва', 'Санкт-Петербург','Москва', 'Санкт-Петербург','Москва', 'Санкт-Петербург','Москва', 'Санкт-Петербург','Москва', 'Санкт-Петербург'];
+    return cities;
 
 };
 
+ /*   $.ajax({
+        url: 'http://localhost:8000/getCities',
+        type:'get',
+        dataType: 'json',
+        success :(data) => {
+            var cities = data;
+            return cities;
+
+        },
+        error : (err) => {
+            console.error(err);
+        }
+    });
+    console.log(cities);
+    console.log('filled');
+
+
+
+};
+*/
 $(document).ready(()=>{
-    let cities = [];
+    var cities = [];
     console.log('hello');
     $('.tab-text').hide();
     $('.first-tab').show();
@@ -37,7 +71,19 @@ $(document).ready(()=>{
 
    $('#city').on('keyup', function () {
         if (cities.length === 0){
-           cities = fillCities();
+            $.ajax({
+                url: 'http://localhost:8000/getCities',
+                type:'get',
+                dataType: 'json',
+                success :(data) => {
+                    cities = data;
+                    return cities;
+
+                },
+                error : (err) => {
+                    console.error(err);
+                }
+            });
        }
        autocomplete($(this).val(), cities);
    });
